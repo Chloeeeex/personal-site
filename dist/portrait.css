@@ -1,0 +1,59 @@
+.avatar {
+  object-fit: cover;
+  object-position: center 31%;
+  border-width: 4px;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr);
+  gap: 65px;
+  align-items: center;
+}
+
+.portrait-frame {
+  margin: 0;
+  position: relative;
+}
+
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  border-radius: 22px;
+  background: #e8ece3;
+  z-index: -1;
+}
+
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 24%;
+  border-radius: 22px;
+}
+
+.portrait-frame figcaption {
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.about-hero + .about-grid {
+  margin-top: 70px;
+}
+
+@media (max-width: 760px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .portrait-frame {
+    max-width: 380px;
+    margin-top: 12px;
+  }
+}
